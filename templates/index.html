@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Librería</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>Daniel Parrales García</h1>
+	<h2>Librería</h2>
+	<ul>
+		{% for libro in libreria -%}
+			<li><a href="/libro/{{libro.isbn}}">{{libro.title}}</a></li>
+		{% endfor -%}	
+	</ul>
+</body>
+</html>
