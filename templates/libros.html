@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<title>Librería</title>
+	<meta charset="utf-8" />
+</head>
+
+<body>
+	<h1>{{dicc.titulo}}</h1>
+	<img src={{dicc.imagen}} alt="">
+	<p>Este libro tiene {{dicc.numpag}} páginas</p>
+	{% if dicc.descrl -%}
+		<p>Descripción: {{dicc.descrl}}</p>
+	{% elif dicc.descrl -%}
+		<p>Descripción: {{dicc.descrc}}</p>
+	{% else -%}
+		<p>No hay descripción</p>
+	{% endif -%}
+	<p>Autores:</p>
+		<ul>
+			{% for i in dicc.autor -%}
+				<p>{{i}}</p>
+			{% endfor -%}
+		</ul>
+	{% if dicc.estado == 'MEAP' -%}
+		<p style='color:red'>ESTE LIBRO NO SE HA PUBLICADO</p>
+	{% endif -%}	
+	<p>Categorías:</p>
+		<ul>
+			{% for a in dicc.categoria -%}
+				<p>{{a}}</p>
+			{% endfor -%}
+		</ul>		
+</body>
+</html>
