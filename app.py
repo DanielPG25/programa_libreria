@@ -10,7 +10,7 @@ with open('./books.json') as f:
 
 @app.route('/',methods=["GET","POST"])
 def inicio():
-	return render_template("index.html",libreria=libreria)
+	return render_template("index.html",libreria=libreri)
 
 @app.route('/libro/<isbn>',methods=["GET","POST"])
 def libros(isbn):
@@ -18,7 +18,7 @@ def libros(isbn):
 	dicc={}
 	for i in libreria:
 		if i.get('isbn')==isbn:
-			dicc['titul']=i.get('title')
+			dicc['titulo']=i.get('title')
 			dicc['imagen']=i.get('thumbnailUrl')
 			dicc['numpag']=i.get('pageCount')
 			dicc['descrl']=i.get('longDescription')
