@@ -31,7 +31,16 @@ def libros(isbn):
 		abort(404)
 	return render_template("libros.html",dicc=dicc)
 
-
+@app.route('/categoria/<categoria>',methods=["GET","POST"])
+def categorias(categoria):
+	lista=[]
+	for i in libreria:
+		if categoria in i.get('categories'):
+			dicc2={}
+			dicc2['titulo']=i.get('title')
+			dicc2['isbn']=i.get('isbn')
+			lista.append(dicc2)
+	return render_template("categorias.html",categoria=categoria,lista=lista)	
 
 port=os.environ["PORT"]
 app.run('0.0.0.0',int(port), debug=True)
