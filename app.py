@@ -18,7 +18,7 @@ def libros(isbn):
 	dicc={}
 	for i in libreria:
 		if i.get('isbn')==isbn:
-			dicc['titulo']=i.get('title')
+			dicc['titul']=i.get('title')
 			dicc['imagen']=i.get('thumbnailUrl')
 			dicc['numpag']=i.get('pageCount')
 			dicc['descrl']=i.get('longDescription')
