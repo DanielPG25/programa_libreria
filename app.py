@@ -8,9 +8,9 @@ with open('./books.json') as f:
 	libreria=json.load(f)
 
 
-@app.route('/',methods=["GET","POST"])
+@app.route('',methods=["GET","POST"])
 def inicio():
-	return render_template("index.html",libreria=libreri)
+	return render_template("index.html",libreria=libreria)
 
 @app.route('/libro/<isbn>',methods=["GET","POST"])
 def libros(isbn):
